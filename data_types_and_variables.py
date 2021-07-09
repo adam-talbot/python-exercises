@@ -7,3 +7,4 @@
 # If price for a movie per day is 3 dollars, how much will you have to pay?
 
 # create a function that take in a list or dictionary? of strings and days and produces the total amount paid
+# adding this line from MBP
