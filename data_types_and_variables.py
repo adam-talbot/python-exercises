@@ -93,6 +93,3 @@ print(username_diff_password)
 
 no_whitespace_start_end = username[0] != ' ' and password[0] != ' ' and username[-1] != ' ' and password[-1] != ' '
 print(no_whitespace_start_end)
-
-
-
