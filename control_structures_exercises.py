@@ -33,7 +33,7 @@ if hours_worked <= 40:
 else:
     paycheck = (hours_worked * hourly_rate) * 1.5
 
-# print(paycheck)
+print(paycheck)
 
 
 #2. Loop Basics
