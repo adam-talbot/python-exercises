@@ -5,7 +5,7 @@
 
 day_of_week = input("Please enter a day of the week: ")
 
-if day_of_week == "Monday" or day_of_week == "Mon" or  day_of_week == "M":
+if day_of_week.lower() == "monday" or day_of_week == "mon" or  day_of_week == "m":
     print("Today is Monday")
 else:
     print("Today is not Monday")
@@ -21,7 +21,7 @@ else:
 
 #c. create variables and make up values for
 # the number of hours worked in one week
-hours_worked = 46
+hours_worked = 45
 # the hourly rate
 hourly_rate = 25
 # how much the week's paycheck will be
@@ -31,7 +31,7 @@ paycheck = 0
 if hours_worked <= 40:
     paycheck = hours_worked * hourly_rate
 else:
-    paycheck = (hours_worked * hourly_rate) * 1.5
+    paycheck = (40 * hourly_rate) + ((hours_worked - 40) * 1.5 * hourly_rate)
 
 print(paycheck)
 
@@ -129,8 +129,9 @@ while is_not_digit:
         if count_to >= 2:
             is_not_digit = False
 
-for n in range(1, count_to):
+for n in range(0, count_to):
     print(n)
+
 
 #e. Write a program that prompts the user for a positive integer. Next write a loop that prints out the numbers from the number the user entered down to 1.
 
@@ -155,7 +156,7 @@ for n in range(count_from, 0, -1):
 # - For the multiples of five print "Buzz".
 # - For numbers which are multiples of both three and five print "FizzBuzz".
 
-for n in range(1, 100, 1):
+for n in range(1, 101, 1):
     if n % 5 == 0 and n % 3 == 0:
         print("FizzBuzz")
     elif n % 3 == 0:
