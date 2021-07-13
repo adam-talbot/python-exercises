@@ -2,9 +2,9 @@
 
 #1. Define a function named is_two. It should accept one input and return True if the passed input is either the number or the string 2, False otherwise.
 
-def is_two(incoming):
-    if incoming == 2 or incoming == '2':
-        return True
+def is_two(incoming): # accepts one parameter, could be any type
+    if incoming == 2 or incoming == '2': # checks to see if incoming is 2 or '2'
+        return True # if meets conditions, returns True
     else:
         return False
 
@@ -30,7 +30,7 @@ def cap_if_starts_with_con(string):
     if is_consonant(string[0]) == True:
         return string.capitalize()
     else:
-        return 
+        return string
         
 #5. Define a function named calculate_tip. It should accept a tip percentage (a number between 0 and 1) and the bill total, and return the amount to tip.
 
@@ -45,7 +45,7 @@ def apply_discount(original_price, discount_percentage):
 #7. Define a function named handle_commas. It should accept a string that is a number that contains commas in it as input, and return a number as output.
 
 def handle_commas(string):
-    return string.replace(",", "")
+    return float(string.replace(",", ""))
 
 #8. Define a function named get_letter_grade. It should accept a number and return the letter grade associated with that number (A-F).
 
@@ -66,7 +66,7 @@ def get_letter_grade(number):
 def remove_vowels(string):
     new_string = str()
     for letter in string:
-        if is_consonant(letter) == True:
+        if is_consonant(letter.lower()) == True:
             new_string += letter
     return new_string
 
@@ -80,8 +80,16 @@ def remove_vowels(string):
 #  - First Name will become first_name
 #  - % Completed will become completed
 
-def normalize_name(string):
-    return string.strip().lower().replace(' ', "_")
+def normalize_name(name): #receives a string
+    name = name.strip().lower().replace(" ", "_") #strips all pre and appending white space, replaces all spaces with underscores, lower() is actually not needed for identifier but was specified in question
+    id = str() #creates an empty string for new string to return
+    for char in name: #for loop to check each character and make sure it is valide identifier
+        if char.isidentifier():
+            id += char #if valid, it is added to new string
+    while id[0].isnumeric(): #while loop used to eliminate numbers at front since not allowed
+        id = id[1:]
+    return id #returns string of final valid identifier
+#if someone enters a string of all numeric characters, this will not work since the while loop will have a string index out of range
 
 #11. Write a function named cumulative_sum that accepts a list of numbers and returns a list that is the cumulative sum of the numbers in the list.
 # - cumulative_sum([1, 1, 1]) returns [1, 2, 3]
