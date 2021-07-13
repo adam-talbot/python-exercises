@@ -83,4 +83,15 @@ def remove_vowels(string):
 def normalize_name(string):
     return string.strip().lower().replace(' ', "_")
 
+#11. Write a function named cumulative_sum that accepts a list of numbers and returns a list that is the cumulative sum of the numbers in the list.
+# - cumulative_sum([1, 1, 1]) returns [1, 2, 3]
+# - cumulative_sum([1, 2, 3, 4]) returns [1, 3, 6, 10]
+
+def cumulative_sum(some_list):
+    cum_sum = 0
+    new_list = []
+    for number in some_list:
+        cum_sum += number
+        new_list.append(cum_sum)
+    return new_list
 
