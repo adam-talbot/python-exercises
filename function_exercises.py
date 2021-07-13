@@ -2,40 +2,94 @@
 
 #1. Define a function named is_two. It should accept one input and return True if the passed input is either the number or the string 2, False otherwise.
 
-def is_two(incoming): # accepts one parameter, could be any type
-    if incoming == 2 or incoming == '2': # checks to see if incoming is 2 or '2'
+def is_two(incoming): # accepts one parameter, could be any type, returns a boolean
+    if incoming == 2 or incoming == "2": # checks to see if incoming is 2 or '2'
         return True # if meets conditions, returns True
     else:
-        return False
+        return False # if doesn't meet conditions, returns False
+
+# Walkthrough
+
+# First test
+print(is_two("2"))
+# When we pass "2" into the function, the if condition will evaluate to True, so the function will return True and this will be printed via the print function
+
+# Second test
+print(is_two(2))
+# When we pass 2 into the function, the if condition will evaluate to True, so the function will return True and this will be printed via the print function
+
+# Third test
+print(is_two("anything else"))
+# When we pass anything else into the function, the if condition will evaluate to Falso, so the function will return False and this will be printed via the print function
 
 #2. Define a function named is_vowel. It should return True if the passed string is a vowel, False otherwise.
 
-def is_vowel(string):
-    if string.lower() in "aeiou":
-        return True
+def is_vowel(string): # accepts one parameter (a string), returns a boolean
+    if string.lower() in "aeiou": # makes the string that was passed in lowercase and checks if it is in the list of vowels
+        return True # if it is, it returns True
     else:
-        return False
+        return False # if it isn't, it returns False
+
+# Walkthrough
+
+# First test
+print(is_vowel("A"))
+# When we pass "A" into the function, it will be changed to lowercase, and it will check if this string is in the list of vowels provided.
+# It is in the list, so it will return True and this will be printed via the print function 
+
+# Second test
+print(is_vowel("b"))
+# When we pass "b" into the function, it will check if this string is in the list of vowels provided.
+# It is not in the list, so it will return False and this will be printed via the print function
 
 #3. Define a function named is_consonant. It should return True if the passed string is a consonant, False otherwise. Use your is_vowel function to accomplish this.
 
-def is_consonant(string):
-    if is_vowel(string) == False:
-        return True
+def is_consonant(string): # accepts one parameter (a string) and returns a boolean
+    if is_vowel(string) == False: # checks if string passed in is not a vowel
+        return True # if this is true, it returns True (since that means it must be a consonant)
     else:
-        return False
+        return False # if this isn't true, it returns False (since that means it is a vowel)
+
+# Walkthrough
+
+# First test
+print(is_consonant("A"))
+# When we pass "A" into the function, it will check if it is not a vowel
+# It is a vowel, so it will return False and this will be printed via the print function
+
+# Second test
+print(is_consonant("b"))
+# When we pass "b" into the function, it will check if it is not a vowel
+# It isn't a vowel, so it will return True and this will be printed via the print function
 
 #4. Define a function that accepts a string that is a word. The function should capitalize the first letter of the word if the word starts with a consonant.
 
-def cap_if_starts_with_con(string):
-    if is_consonant(string[0]) == True:
-        return string.capitalize()
+def cap_if_starts_with_con(string): # accepts one parameter (a string), and returns a string
+    if is_consonant(string[0]) == True: # checks if first letter of string that was passed in is a consonant using the is_consonant function
+        return string.capitalize()  # if it is, it capitalizes the first letter of that string using the capitalize() string method 
     else:
-        return string
+        return string # if it is not, it returns the string in it's original form
+
+# Walkthrough
+
+# First test
+print(cap_if_starts_with_con("hello"))
+# When we pass in a word that starts with a consonant, the if condition is true and therefore the first letter of that string is capitalized
+# and this new string is printed via the print function
+
+# Second test
+print(cap_if_starts_with_con("exactly"))
+# When we pass in a word that starts with a vowel, the if condition is false and therefore the first letter of that string is not capitalized
+# and the original string is printed via the print function
         
 #5. Define a function named calculate_tip. It should accept a tip percentage (a number between 0 and 1) and the bill total, and return the amount to tip.
 
-def calculate_tip(tip_percentage, bill_total):
-    return tip_percentage * bill_total
+def calculate_tip(tip_percentage, bill_total): # accepts two parameters, first parameter should be a number from 0 to 1, second number should be total bill in dollars
+    return tip_percentage * bill_total # returns arguments multiplied by one another
+
+# Walkthrough
+
+####
 
 #6. Define a function named apply_discount. It should accept a original price, and a discount percentage, and return the price after the discount is applied.
 
