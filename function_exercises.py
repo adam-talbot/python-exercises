@@ -106,8 +106,8 @@ print(apply_discount(100, 30))
 
 #7. Define a function named handle_commas. It should accept a string that is a number that contains commas in it as input, and return a number as output.
 
-def handle_commas(string):
-    return float(string.replace(",", ""))
+def handle_commas(string): # accepts one parameter (a string) and returns a string
+    return string.replace(",", "") # string method replaces all commas with nothing (removes them)
 
 # Walkthrough
 
